@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="../css/style.css"/>
+		<link rel="stylesheet" type="text/css" href="../bootstrap/css/bootstrap.min.css"/>
+		<style type="text/css">
+
+		</style>
+		<script>
+			function pwdCheck(){
+				var x=document.getElementById("new_pwd");
+				var y=document.getElementById("confirm_pwd");
+				if(x.value==""||y.value==""){
+					alert("输入密码不能为空");
+					return false;
+				}
+				if(x.value!=y.value){
+					alert("两次输入密码不一致");
+					return false;
+				}else{
+					return true;
+				}	
+			}
+		</script>
+	</head>
+	<body>
+		<div id="wrapper">
+		<div id="wrappertop"></div>
+
+		<div id="wrappermiddle">
+
+			<h2>修改密码</h2>
+			<br /><br />
+      <form action="/CourseDesign/modifyPwd"  onsubmit="return pwdCheck()" method="post" >
+
+			<div class="addstu">
+
+				<div class="inputleft"></div>
+
+				<div class="inputmiddle">
+					<input id="new_pwd" type="text" name="new_pwd" class="url" placeholder="新密码">
+				</div>
+
+				<div class="inputright"></div>
+
+			</div>
+			<div class="addstu">
+
+				<div class="inputleft"></div>
+
+				<div class="inputmiddle">
+					<input id="confirm_pwd" type="text" name="confirm_pwd" class="url" placeholder="确认密码">
+				</div>
+
+				<div class="inputright"></div>
+
+			</div>
+		
+			<div class="text-center" style="margin-top:10px ;">
+			
+	        <button type="submit" class="btn btn-success">修改</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+			<button type="reset" class="btn btn-danger">重置</button>
+            <br /><br />
+			</div>
+       
+			</form>
+		</div>
+	</div>
+	</body>
+</html>
